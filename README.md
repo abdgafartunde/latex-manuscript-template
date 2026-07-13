@@ -74,16 +74,6 @@ The template includes commented-out stubs for common additional sections. Uncomm
 
 If you use this template in your work, you can cite it via its Zenodo DOI:
 
-> Tiamiyu, A. T. (2026). *LaTeX Manuscript Template for Computational and Applied Mathematics*. Zenodo. `DOI-HERE`
+> Tiamiyu, A. T. (2026). *LaTeX Manuscript Template for Computational and Applied Mathematics*. Zenodo. `10.5281/zenodo.XXXXXXX`
 
-A `CITATION.cff` file is included in the repository for GitHub's "Cite this repository" widget.
-
-### Setting up the DOI (first-time only)
-
-1. Push this repo to GitHub and make it public.
-2. Go to [zenodo.org/account/settings/github](https://zenodo.org/account/settings/github) and flip the switch on your repo.
-3. Create a GitHub Release (`v1.0.0`) — Zenodo automatically archives it and mints a **concept DOI** (resolves to all versions) and a version-specific DOI.
-4. Copy the concept DOI, uncomment the `identifiers` block in `CITATION.cff`, and paste the DOI.
-5. Commit the updated `CITATION.cff` directly to `main` — no second release needed. The Zenodo landing page displays the DOI regardless; the next release (`v1.1.0`) will have the DOI inside its archived copy.
-
-All future GitHub Releases are automatically archived on Zenodo with their own version DOI.
+A `CITATION.cff` file is included for GitHub's "Cite this repository" widget.

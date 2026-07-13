@@ -14,5 +14,16 @@
 *.snm
 *.vrb
 
-# Compiled PDF (uncomment if you want to track PDFs in git)
-*.pdf
+# Compiled main PDF (comment out if you want to track it in git)
+# Note: this also ignores figure PDFs in figures/ — uncomment the
+# next two lines and comment out the one above to allow figure PDFs:
+# *.pdf
+# !figures/**/*.pdf
+main.pdf
+
+# Additional LaTeX artifacts (uncomment if using these tools)
+# *.run.xml        # biblatex
+# *.bcf            # biblatex
+# *.xdv            # XeTeX
+# *.acn *.acr *.alg *.glg *.glo *.gls *.ist  # glossaries / makeindex
+# auto/            # some editors

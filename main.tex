@@ -38,11 +38,12 @@
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{setspace}
 \onehalfspacing  % TODO: Change to \doublespacing for journal submission, \singlespacing for camera-ready
-\setlength{\parindent}{0pt}
+\setlength{\parindent}{0pt}  % TODO: set \parindent > 0 and \parskip = 0 for journals that require indented paragraphs
 \setlength{\parskip}{6pt}
 \setlength{\emergencystretch}{2em}
 % \hbadness=10000  % WARNING: suppresses underfull box warnings — uncomment only for final production
-\usepackage{hyperref}
+% Hyperlink options — customize or replace with \usepackage[hidelinks]{hyperref} for submission
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
 
 %% ---- theorem environments ----------------------------------------------
