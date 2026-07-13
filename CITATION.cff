@@ -15,9 +15,6 @@ keywords:
   - "computational-mathematics"
   - "applied-mathematics"
 license: MIT
-# TODO: After your first GitHub Release is archived on Zenodo,
-# uncomment the block below and paste the concept DOI (resolves to all versions).
-# Commit directly to main — no second release needed.
-# identifiers:
-#   - type: doi
-#     value: 10.5281/zenodo.XXXXXXX
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21333677

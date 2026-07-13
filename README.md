@@ -74,6 +74,6 @@ The template includes commented-out stubs for common additional sections. Uncomm
 
 If you use this template in your work, you can cite it via its Zenodo DOI:
 
-> Tiamiyu, A. T. (2026). *LaTeX Manuscript Template for Computational and Applied Mathematics*. Zenodo. `10.5281/zenodo.XXXXXXX`
+> Tiamiyu, A. T. (2026). *LaTeX Manuscript Template for Computational and Applied Mathematics* (Version v1.0.0). Zenodo. [10.5281/zenodo.21333677](https://doi.org/10.5281/zenodo.21333677)
 
 A `CITATION.cff` file is included for GitHub's "Cite this repository" widget.
