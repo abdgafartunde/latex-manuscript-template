@@ -1,0 +1,91 @@
+%%% =======================================================================
+\section{Numerical Experiments}\label{sec:numerics}
+%%% =======================================================================
+
+% TODO: Replace with your numerical experiments. Typical contents:
+%   - Experimental setup (domain, discretization, noise model, metrics)
+%   - Test cases / phantoms
+%   - Comparison with baseline methods
+%   - Ablation studies
+%   - Robustness / sensitivity analysis
+
+%%% -----------------------------------------------------------------------
+\subsection{Experimental Setup}\label{ssec:numerics_setup}
+%%% -----------------------------------------------------------------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\begin{table}[!htb]
+    \centering
+    \caption{Experimental parameters.}
+    \label{tab:setup}
+    \begin{tabular}{lc}
+        \toprule
+        Parameter & Value \\
+        \midrule
+        Domain size  & $N = 128$ \\
+        Noise level  & $\delta = 1\%$ \\
+        Regularization & $\beta = 10^{-3}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+%%% -----------------------------------------------------------------------
+\subsection{Results}\label{ssec:results}
+%%% -----------------------------------------------------------------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+\begin{figure}[!htb]
+    \centering
+    % Example TikZ figure — replace with your own.
+    % For external figures, use:  \includegraphics[width=0.75\textwidth]{your_figure.pdf}
+    \begin{tikzpicture}[scale=1.2,
+        box/.style={rectangle,draw,rounded corners,minimum width=2.2cm,minimum height=0.8cm,align=center},
+        arr/.style={-{Stealth[scale=0.9]},thick}]
+        % Forward problem
+        \node[box,fill=blue!8] (model) at (0,0) {Unknown\\$u^\dagger$};
+        \node[box,fill=green!8] (fwd) at (3.5,0) {Forward\\operator $\mathcal{A}$};
+        \node[box,fill=red!8] (data) at (7,0) {Data\\$f = \mathcal{A}(u^\dagger)$};
+        \draw[arr] (model) -- (fwd);
+        \draw[arr] (fwd) -- (data);
+        % Inverse problem
+        \node[box,fill=red!8] (noisy) at (7,-2.2) {Noisy data\\$f^\delta = f + \eta$};
+        \node[box,fill=green!8] (inv) at (3.5,-2.2) {Inverse\\solver};
+        \node[box,fill=blue!8] (rec) at (0,-2.2) {Reconstruction\\$u_h \approx u^\dagger$};
+        \draw[arr] (noisy) -- (inv);
+        \draw[arr] (inv) -- (rec);
+        % Noise arrow
+        \draw[arr,dashed,gray] (data) -- (noisy) node[midway,right,gray] {$\eta$};
+    \end{tikzpicture}
+    \caption{Schematic of the forward and inverse problem. The forward operator
+             $\mathcal{A}$ maps the unknown $u^\dagger$ to noise-free data $f$;
+             the inverse solver recovers an approximation $u_h$ from noisy
+             measurements $f^\delta = f + \eta$.}
+    \label{fig:results}
+\end{figure}
+
+\begin{table}[!htb]
+    \centering
+    \caption{Quantitative comparison. Mean $\pm$ std over five realizations.}
+    \label{tab:results}
+    \begin{tabular}{lccc}
+        \toprule
+        Method   & Metric 1 & Metric 2 & Metric 3 \\
+        \midrule
+        Baseline & -- & -- & -- \\
+        Proposed & -- & -- & -- \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+%%% -----------------------------------------------------------------------
+\subsection{Discussion}\label{ssec:discussion}
+%%% -----------------------------------------------------------------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

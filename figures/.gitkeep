@@ -1,0 +1,3 @@
+# This directory is for figure files (PDF, PNG, EPS, etc.).
+# Place all your figures here and reference them with \includegraphics{filename}
+# The \graphicspath{{figures/}} in main.tex handles the path automatically.

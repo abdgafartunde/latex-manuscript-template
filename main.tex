@@ -1,0 +1,198 @@
+%%% =======================================================================
+%%%  LaTeX Manuscript Template
+%%%  Computational & Applied Mathematics
+%%%  Author: Abd'gafar Tunde Tiamiyu
+%%% =======================================================================
+\documentclass[11pt,a4paper]{article}
+
+%% ---- packages ----------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{caption,subcaption}
+\usepackage{algorithm,algpseudocode}
+% For the older algorithmic package, replace the line above with:
+% \usepackage{algorithm,algorithmic}
+\usepackage{enumitem}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes,positioning,calc,patterns}
+% ---- fonts and typography (uncomment as needed) ------------------------
+% \usepackage{microtype}       % micro-typographic enhancements
+% \usepackage{lmodern}         % Latin Modern fonts
+% \usepackage{libertine}       % or: Libertine serif font
+% \usepackage{csquotes}        % \enquote{...} for context-sensitive quotes
+% ---- journal submission tools (uncomment as needed) ---------------------
+% \usepackage{lineno}          % line numbers for review
+% \usepackage{doi}             % hyperlinked DOIs in bibliography
+% \usepackage{siunitx}         % \si{...} for proper unit formatting
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{setspace}
+\onehalfspacing  % TODO: Change to \doublespacing for journal submission, \singlespacing for camera-ready
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+% \hbadness=10000  % WARNING: suppresses underfull box warnings — uncomment only for final production
+\usepackage{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+
+%% ---- theorem environments ----------------------------------------------
+\usepackage{aliascnt}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\crefname{proposition}{Proposition}{Propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\crefname{lemma}{Lemma}{Lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\crefname{corollary}{Corollary}{Corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+
+\theoremstyle{definition}
+
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\crefname{definition}{Definition}{Definitions}
+\Crefname{definition}{Definition}{Definitions}
+
+\newaliascnt{assumption}{theorem}
+\newtheorem{assumption}[assumption]{Assumption}
+\aliascntresetthe{assumption}
+\crefname{assumption}{Assumption}{Assumptions}
+\Crefname{assumption}{Assumption}{Assumptions}
+
+\theoremstyle{remark}
+
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\crefname{remark}{Remark}{Remarks}
+\Crefname{remark}{Remark}{Remarks}
+
+% Algorithm is not a theorem-like environment, but cleveref needs these for \cref{alg:...}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+
+%% ---- custom commands ---------------------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\ip}[2]{\langle #1,\, #2\rangle}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+% Domain-specific example commands (uncomment and customize as needed):
+% \newcommand{\forwardMap}{\Lambda}       % forward/mapping operator
+% \newcommand{\fronorm}[1]{\left\|#1\right\|_{\mathrm{F}}}  % Frobenius norm
+% \newcommand{\Sn}{\mathbb{S}^{L}}         % L-sphere of symmetric matrices
+% \newcommand{\Snp}{\mathbb{S}^{L}_{+}}     % PSD cone
+% \newcommand{\psdge}{\succcurlyeq}        % Loewner partial order (PSD >=)
+% \newcommand{\psdle}{\preccurlyeq}        % Loewner partial order (PSD <=)
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\sign}{sign}
+
+%% ---- title block -------------------------------------------------------
+% TODO: Update title for your paper.
+% Note: some journal classes bold the title automatically; remove \textbf{} if needed.
+\title{\textbf{Paper Title Goes Here}}
+
+% TODO: Update authors, affiliations, and corresponding author email.
+% Tip: for complex multi-affiliation papers, consider the authblk package:
+%   \usepackage{authblk}
+%   \author[1]{...}  \author[2]{...}  \affil[1]{...}  \affil[2]{...}
+\author{%
+Abd'gafar Tunde Tiamiyu$^{1}$, \quad
+Second Author$^{2}$, \quad
+Third Author$^{3}$\\[1em]
+{\small\itshape $^{1}$School of Mathematics, Jilin University, Changchun 130012, Jilin, China}\\
+{\small\itshape $^{2}$Affiliation of Second Author}\\
+{\small\itshape $^{3}$Affiliation of Third Author}\\[0.5em]
+{\small $^{*}$Corresponding author: \texttt{your.email@jlu.edu.cn}}
+}
+
+\date{}
+
+%%% =======================================================================
+\begin{document}
+\maketitle
+
+% TODO: Write your abstract (150--250 words)
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+\end{abstract}
+
+\medskip
+% TODO: Update keywords for your paper
+\noindent\textbf{Keywords:} keyword one, keyword two, keyword three, keyword four
+
+% \tableofcontents
+% \newpage
+
+%% ---- Sections ----------------------------------------------------------
+% Standard sections for a computational/applied mathematics paper.
+% Uncomment, reorder, or remove as needed for your paper.
+\input{sections/introduction}
+\input{sections/setting}
+\input{sections/method}
+\input{sections/numerics}
+\input{sections/conclusion}
+
+% Optional additional sections — uncomment and rename files as needed:
+% \input{sections/related_work}
+% \input{sections/preliminaries}
+% \input{sections/appendix}
+
+%% ---- Back matter -------------------------------------------------------
+% TODO: Update or remove acknowledgments as appropriate
+% \section*{Acknowledgments}
+% The authors thank ...
+
+\section*{Code and Data Availability}
+% TODO: Update with your actual repository or data statement
+The code and data used to produce the numerical results reported in this paper
+will be made publicly available in the authors' GitHub repository upon
+acceptance of the manuscript.
+
+\section*{Declaration of Competing Interests}
+The authors declare no competing interests.
+
+\bibliographystyle{abbrvnat}
+% Alternatives: unsrt (unsorted, numbered), plainnat (alpha-order, author-year),
+% abbrvnat (abbreviated first names, author-year)
+\bibliography{references}
+
+\end{document}

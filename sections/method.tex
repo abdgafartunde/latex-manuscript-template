@@ -1,0 +1,54 @@
+%%% =======================================================================
+\section{Method}\label{sec:method}
+%%% =======================================================================
+
+% TODO: Replace with your proposed method. Typical contents:
+%   - Algorithm description and pseudocode
+%   - Theoretical analysis (convergence, error bounds, etc.)
+%   - Key lemmas, propositions, theorems
+%   - Discussion of design choices
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+%%% -----------------------------------------------------------------------
+\subsection{Algorithm}\label{ssec:algorithm}
+%%% -----------------------------------------------------------------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. The proposed method is
+summarized in Algorithm~\ref{alg:main}.
+
+\begin{algorithm}[!htb]
+    \caption{Proposed Method}\label{alg:main}
+    \begin{algorithmic}[1]
+        \Require data $f^\delta$, parameters $\theta$
+        \State Initialize $u^{(0)}$
+        \For{$k = 0, 1, \dots, K-1$}
+            \State Compute update direction $d^{(k)}$
+            \State $u^{(k+1)} \gets u^{(k)} + \alpha_k d^{(k)}$
+        \EndFor
+        \Ensure reconstructed $u^{(K)}$
+    \end{algorithmic}
+\end{algorithm}
+
+%%% -----------------------------------------------------------------------
+\subsection{Analysis}\label{ssec:analysis}
+%%% -----------------------------------------------------------------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+\begin{theorem}[Main Result]\label{thm:main}
+    Let the assumptions of \cref{ssec:governing} hold. Then the iterates of
+    Algorithm~\ref{alg:main} satisfy
+    \begin{equation}\label{eq:bound}
+        \|u^{(k)} - u^\dagger\| \le C \rho^k \|u^{(0)} - u^\dagger\|,
+    \end{equation}
+    for some $C>0$ and $\rho\in(0,1)$.
+\end{theorem}
+
+\begin{proof}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\end{proof}
